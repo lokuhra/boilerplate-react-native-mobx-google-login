@@ -17,6 +17,14 @@ export default class GoogleLogin {
   }
 
   @action
+  setLogOut() {
+    this.signed = false;
+    this.data.id = "";
+    this.data.username = "";
+    this.data.email = "";
+  }
+
+  @action
   setID(id) {
     this.data.id = id;
   }

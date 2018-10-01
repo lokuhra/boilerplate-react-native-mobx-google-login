@@ -16,7 +16,7 @@ export default class HomePage extends Component {
     return (
       <Container>
         <Header
-          title={"Home!"}
+          title={"Home xD"}
           onBackButton={() => this.props.navigation.goBack()}
           onPressMenu={() => this.props.navigation.openDrawer()}
         />

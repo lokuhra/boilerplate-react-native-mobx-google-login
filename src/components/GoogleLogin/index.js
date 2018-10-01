@@ -27,7 +27,7 @@ export default class GoogleLogin extends Component {
         console.log("cancelled");
       }
     } catch (e) {
-      console.log("asd error", e);
+      console.log("error", e);
     }
   };
 
@@ -36,7 +36,12 @@ export default class GoogleLogin extends Component {
     return (
       <View style={styles.container}>
         {signed ? (
-          <Logged name={data.username} email={data.email} id={data.id} />
+          <Logged
+            name={data.username}
+            email={data.email}
+            id={data.id}
+            logOut={() => this.props.googleLogin.setLogOut()}
+          />
         ) : (
           <Login signIn={this.signIn} />
         )}

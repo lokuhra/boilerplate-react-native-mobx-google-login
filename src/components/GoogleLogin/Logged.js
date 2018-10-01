@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 
 const LoggedInPage = props => (
   <View style={styles.container}>
@@ -15,6 +15,7 @@ const LoggedInPage = props => (
       Email:
       {props.email}
     </Text>
+    <Button title={"Log Out"} onPress={props.logOut} />
   </View>
 );
 
