@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name":"my app 1",
+    "icon": "./assets/icon.png",
+    "description":"some description about our project",
+    "sdkVersion": "30.0.0",
+    "version":"1.0.0",
+    "android":{
+      "package":"com.johncy.myapp",
+      "versionCode":1 ,
+      "icon": "./assets/icon.png"
+    }
+  }
+}
