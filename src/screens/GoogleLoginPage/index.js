@@ -10,7 +10,7 @@ export default class ChatPage extends Component {
     return (
       <Container>
         <Header
-          title={"Google Login"}
+          title={"Google Login!"}
           onBackButton={() => this.props.navigation.goBack()}
           onPressMenu={() => this.props.navigation.openDrawer()}
         />

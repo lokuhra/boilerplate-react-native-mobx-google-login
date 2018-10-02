@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Button } from "react-native";
 import { observer, inject } from "mobx-react";
 import Login from "./Login";
 import Logged from "./Logged";
@@ -19,10 +19,7 @@ export default class GoogleLogin extends Component {
       });
 
       if (result.type === "success") {
-        this.props.googleLogin.setSigned();
-        this.props.googleLogin.setEmail(result.user.email);
-        this.props.googleLogin.setUsername(result.user.name);
-        this.props.googleLogin.setID(result.user.id);
+        this.props.googleLogin.setLogin(result.user);
       } else {
         console.log("cancelled");
       }
@@ -37,7 +34,7 @@ export default class GoogleLogin extends Component {
       <View style={styles.container}>
         {googleLogin.signed ? (
           <Logged
-            name={googleLogin.data.username}
+            name={googleLogin.data.name}
             email={googleLogin.data.email}
             id={googleLogin.data.id}
             logOut={() => googleLogin.setLogOut()}

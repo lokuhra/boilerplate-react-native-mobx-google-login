@@ -1,10 +1,11 @@
 import { observable, action } from "mobx";
 
+import R from "rambda";
 export default class GoogleLogin {
   @observable
   data = {
     id: "",
-    username: "",
+    name: "",
     email: ""
   };
 
@@ -12,28 +13,14 @@ export default class GoogleLogin {
   signed = false;
 
   @action
-  setSigned() {
+  setLogin(obj) {
     this.signed = true;
+    this.data = R.pick(R.keys(this.data), obj);
   }
 
   @action
   setLogOut() {
+    this.data = R.map(x => "", this.data);
     this.signed = false;
-    this.data.id = "";
-    this.data.username = "";
-    this.data.email = "";
-  }
-
-  @action
-  setID(id) {
-    this.data.id = id;
-  }
-  @action
-  setUsername(username) {
-    this.data.username = username;
-  }
-  @action
-  setEmail(email) {
-    this.data.email = email;
   }
 }

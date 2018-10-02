@@ -10,6 +10,8 @@
     "mobx": "^3.5.1",
     "mobx-react": "4.4.2",
     "native-base": "^2.8.0",
+    "rambda": "^1.2.2",
+    "rambdax": "^0.12.3",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
     "react-native-elements": "0.18.5",
